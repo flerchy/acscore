@@ -39,8 +39,8 @@ class SpacesNearSquareBrackets:
             reg_close_space = re.compile(r'( \])')
             reg_open_new_line = re.compile(r'(\[\n)')
             reg_close_new_line = re.compile(r'\n\]')
-            reg_open_no_space = re.compile(r'\[\S')
-            reg_close_no_space = re.compile(r'\S\]')
+            reg_open_no_space = re.compile(r'\[[^(\s|\]))]')
+            reg_close_no_space = re.compile(r'[^(\[|\s)]\]')
 
             line_number = 0
             single_quote = False

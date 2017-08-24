@@ -20,7 +20,7 @@ class SpacesNearRoundBracketsTest(unittest.TestCase):
             TableTestCase('a = (\'5\', \'6\', "asd")', {'spaces': 0, 'no_spaces': 2, 'new_lines': 0}),
             TableTestCase('while True\t(or not ) :\n while True: pass', {'spaces': 1, 'no_spaces': 1, 'new_lines': 0}),
             TableTestCase('', {'spaces': 0, 'no_spaces': 0, 'new_lines': 0}),
-            TableTestCase('a = "{some}"', {'spaces': 0, 'no_spaces': 0, 'new_lines': 0}),
+            TableTestCase('a = () \n b = "{some}"', {'spaces': 0, 'no_spaces': 0, 'new_lines': 0}),
             TableTestCase('a = (\n"hello": "world"\n)', {'spaces': 0, 'no_spaces': 0, 'new_lines': 1}),
         ]
 

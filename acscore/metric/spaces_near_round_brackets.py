@@ -39,8 +39,8 @@ class SpacesNearRoundBrackets:
             reg_close_space = re.compile(r'( \))')
             reg_open_new_line = re.compile(r'(\(\n)')
             reg_close_new_line = re.compile(r'\n\)')
-            reg_open_no_space = re.compile(r'\(\S')
-            reg_close_no_space = re.compile(r'\S\)')
+            reg_open_no_space = re.compile(r'\([^(\s|)))]')
+            reg_close_no_space = re.compile(r'[^((|\s)]\)')
 
             line_number = 0
             single_quote = False
@@ -58,7 +58,6 @@ class SpacesNearRoundBrackets:
                         single_quote = not single_quote
                     if line[i] == '\"':
                         double_quote = not double_quote
-
                 amount_open_brackets_spaces = len(reg_open_space.findall(no_quote))
                 amount_open_brackets_no_spaces = len(reg_open_no_space.findall(no_quote))
                 amount_close_brackets_spaces = len(reg_close_space.findall(no_quote))
